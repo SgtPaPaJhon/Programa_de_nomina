@@ -1,0 +1,30 @@
+static void EmpleadosPorEncimaDe50000()
+    {
+        bool encontrado = false;
+        Console.WriteLine("Empleados con sueldo por encima de los 50,000");
+        Console.WriteLine();
+        for (int i = 0; i < cantidadDeEmpleados; i++)
+        {
+            decimal sueldoNeto = decimal.Parse(empleados[i][9]);
+            if (sueldoNeto > 50000)
+            {
+                Console.WriteLine("Nombre: " + empleados[i][0] + " " + empleados[i][1]);
+                Console.WriteLine("Edad: " + empleados[i][2]);
+                Console.WriteLine("Sexo: " + empleados[i][3]);
+                Console.WriteLine("Fecha de nacimiento: " + empleados[i][4]);
+                Console.WriteLine("Posee licencia: " + empleados[i][5]);
+                Console.WriteLine("Sueldo bruto: " + empleados[i][6]);
+                Console.WriteLine("TSS: " + empleados[i][7]);
+                Console.WriteLine("Impuesto sobre la renta: " + empleados[i][8]);
+                Console.WriteLine("Sueldo neto: " + empleados[i][9]);
+                Console.WriteLine();
+                encontrado = true;
+            }
+        }
+        if (!encontrado)
+        {
+            Console.WriteLine("No se encontraron empleados con sueldo por encima de los 50,000");
+        }
+        Console.WriteLine("\nPresione cualquier tecla para volver al menu.");
+        Console.ReadKey();
+        Console.Clear();
